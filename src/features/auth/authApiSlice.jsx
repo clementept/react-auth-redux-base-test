@@ -41,7 +41,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
     }),
     logout: builder.mutation({
       query: () => ({
-        url: "/login/refresh",
+        url: "/logout",
         method: "GET",
       }),
       async onQueryStarted(arg, { dispatch, queryFulfilled }) {
