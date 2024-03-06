@@ -87,3 +87,8 @@ a:hover, a:focus {
 .users ul {
   list-style-type: none;
 }
+
+.logout_button {
+  width: 5rem;
+  height:2rem;
+}

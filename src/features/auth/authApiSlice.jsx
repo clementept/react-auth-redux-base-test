@@ -1,5 +1,5 @@
 import { apiSlice } from "../../app/api/apiSlice";
-import { setCredentials } from "./authSlice";
+import { setCredentials, logOut } from "./authSlice";
 
 export const authApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -26,20 +26,36 @@ export const authApiSlice = apiSlice.injectEndpoints({
     // })
     refresh: builder.mutation({
       query: () => ({
-          url: '/login/refresh',
-          method: 'GET',
+        url: "/login/refresh",
+        method: "GET",
       }),
       async onQueryStarted(arg, { dispatch, queryFulfilled }) {
-          try {
-              const { data } = await queryFulfilled
-              console.log(data)
-              dispatch(setCredentials({ ...data, email: "" }))
-          } catch (err) {
-              console.log(err)
-          }
-      }
-  }),
+        try {
+          const { data } = await queryFulfilled;
+          console.log(data);
+          dispatch(setCredentials({ ...data, email: "" }));
+        } catch (err) {
+          console.log(err);
+        }
+      },
+    }),
+    logout: builder.mutation({
+      query: () => ({
+        url: "/login/refresh",
+        method: "GET",
+      }),
+      async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
+          console.log(data);
+          dispatch(logOut());
+        } catch (err) {
+          console.log(err);
+        }
+      },
+    }),
   }),
 });
 
-export const { useLoginMutation, useRefreshMutation } = authApiSlice;
+export const { useLoginMutation, useRefreshMutation, useLogoutMutation } =
+  authApiSlice;

@@ -34,7 +34,7 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
       // retry original query with new access token
       result = await baseQuery(args, api, extraOptions);
     } else {
-      console.log("Logging out")
+      console.log("Logging out");
       api.dispatch(logOut());
     }
   }
