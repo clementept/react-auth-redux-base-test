@@ -1,3 +1,4 @@
+import { LoadingSpinner } from "../../app/components/LoadingSpinner";
 import { useGetUsersQuery } from "./usersApiSlice";
 import { Link } from "react-router-dom";
 
@@ -12,7 +13,7 @@ const UsersList = () => {
 
   let content;
   if (isLoading) {
-    content = <p>"Loading..."</p>;
+    content = <LoadingSpinner />;
   } else if (isSuccess) {
     content = (
       <section className="users">

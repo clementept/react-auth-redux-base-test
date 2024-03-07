@@ -4,14 +4,13 @@ import { useSelector } from "react-redux";
 import { selectCurrentToken } from "../../features/auth/authSlice";
 
 const Layout = () => {
-
-  const token = useSelector(selectCurrentToken); 
+  const token = useSelector(selectCurrentToken);
   return (
     <div className="layout">
       {token && <Logout />}
       <div className="layout-wrapper">
-          <Outlet />
-        </div>
+        <Outlet />
+      </div>
     </div>
   );
 };

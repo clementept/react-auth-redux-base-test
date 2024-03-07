@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setCredentials } from "./authSlice";
 import { useLoginMutation } from "./authApiSlice";
+import { LoadingSpinner } from "../../app/components/LoadingSpinner";
 
 const Login = () => {
   const userRef = useRef();
@@ -57,7 +58,7 @@ const Login = () => {
   const handlePwdInput = (e) => setPwd(e.target.value);
 
   const content = isLoading ? (
-    <h1>Loading...</h1>
+    <LoadingSpinner />
   ) : (
     <section className="login">
       <p
