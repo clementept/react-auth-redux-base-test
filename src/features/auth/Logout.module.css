@@ -1,0 +1,13 @@
+.logout_button {
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.logout_button_wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 5px;
+}
