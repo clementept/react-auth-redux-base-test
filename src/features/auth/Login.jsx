@@ -28,7 +28,10 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const userData = await login({ username: userEmail, password: pwd }).unwrap();
+      const userData = await login({
+        username: userEmail,
+        password: pwd,
+      }).unwrap();
       dispatch(setCredentials({ ...userData, email: userEmail }));
       setUserEmail("");
       setPwd("");
@@ -68,25 +71,30 @@ const Login = () => {
       <h1>Login</h1>
 
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          ref={userRef}
-          value={userEmail}
-          onChange={handleUserEmailInput}
-          autoComplete="off"
-          required
-        />
+        <div class="input_box">
+          <input
+            type="text"
+            id="username"
+            ref={userRef}
+            value={userEmail}
+            onChange={handleUserEmailInput}
+            autoComplete="off"
+            required
+          />
+          <label htmlFor="username">Username</label>
+        </div>
 
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          onChange={handlePwdInput}
-          value={pwd}
-          required
-        />
+        <div class="input_box">
+          <input
+            type="password"
+            id="password"
+            onChange={handlePwdInput}
+            value={pwd}
+            required
+          />
+          <label htmlFor="password">Password</label>
+        </div>
+
         <button>Sign In</button>
       </form>
     </section>

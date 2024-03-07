@@ -7,10 +7,12 @@ const Layout = () => {
 
   const token = useSelector(selectCurrentToken); 
   return (
-    <>
+    <div className="layout">
       {token && <Logout />}
-      <Outlet />
-    </>
+      <div className="layout-wrapper">
+          <Outlet />
+        </div>
+    </div>
   );
 };
 

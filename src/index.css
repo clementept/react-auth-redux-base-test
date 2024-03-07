@@ -16,7 +16,7 @@
 body {
   font: 1.5rem 'Nunito', sans-serif;
   min-height: 100vh;
-  background-color: #0F172A;
+  background-color: #000000;
   color: #fff;
 }
 
@@ -56,17 +56,65 @@ a:hover, a:focus {
   flex-flow: column nowrap;
   gap: 0.5rem;
   margin-top: 1rem;
+  width: 100%;
+  align-items: center;
 }
 
-.login input, .login button {
+.login button {
   padding: 0.3em;
   border-radius: 15px;
+  width: 150px;
+  margin-top: 10px;
+}
+
+.login form .input_box{
+  width: 100%;
+  margin-top: 15px;
+  position: relative;
+  display: flex; /* Add this line to use flexbox */
+  justify-content: center;
+  align-items: center;
+  
+}
+.login form .input_box input {
   width: 350px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 7px 7px;
+  border-radius: 10px;
+}
+
+.login form .input_box label {
+  position: absolute;
+  font-size: 15px;
+  pointer-events: none;
+  transition: 0.2s;
+  color: #000000;
+
+  /* transform: translateY(50%); */
+}
+
+.login form .input_box input:focus + label,
+.login form .input_box input:valid + label{
+    /* top: -24px; */
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    transform: translateY(-30px);
 }
 
 /* || PAGES */
 
-.public, .welcome, .users {
+.public {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  height: 100%;
+  width: 100%;
+  gap: 1rem;
+}
+
+.welcome, .users {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,4 +138,19 @@ a:hover, a:focus {
 .logout_button {
   width: 5rem;
   height:2rem;
+}
+
+.layout {
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-wrapper {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Enable vertical scrolling when content overflows */
 }
