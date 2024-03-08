@@ -13,7 +13,7 @@ const Public = () => {
         <p>&nbsp;</p>
       </main>
       <footer>
-        <Link to="/login">Login</Link>
+        <Link to="/login">Login</Link> OR <Link to="/login2">Login 2</Link>
       </footer>
     </section>
   );

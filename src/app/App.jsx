@@ -6,6 +6,7 @@ import Public from "./components/Public";
 import RequireAuth from "../features/auth/RequireAuth";
 import UsersList from "../features/users/UsersList";
 import PersistLogin from "../features/auth/PersistLogin";
+import Login2 from "../features/auth/Login2";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         {/* public routes */}
         <Route index element={<Public />} />
         <Route path="login" element={<Login />} />
+        <Route path="login2" element={<Login2 />} />
 
         {/* protected routes */}
         <Route element={<PersistLogin />}>
