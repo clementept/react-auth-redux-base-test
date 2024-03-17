@@ -17,6 +17,9 @@ const Welcome = () => {
       <p>
         <Link to="/flexplayground">Flex Playground</Link>
       </p>
+      <p>
+        <Link to="/gridplayground">Grid Playground</Link>
+      </p>
     </section>
   );
 
