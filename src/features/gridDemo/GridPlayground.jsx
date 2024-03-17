@@ -15,9 +15,9 @@ const RoundButton = ({ onClick, children }) => (
   </button>
 );
 
-const Slider = ({ value, onChange, max }) => (
+const Slider = ({ value, onChange, min, max }) => (
   <>
-    <input type="range" min="0" max={max} value={value} onChange={onChange} />
+    <input type="range" min={min} max={max} value={value} onChange={onChange} />
     <span className={styles.smallLabel}>{value}px</span>
   </>
 );
@@ -118,6 +118,7 @@ const GridPlayground = () => {
             <Slider
               value={rowGap}
               onChange={(e) => setRowGap(e.target.value)}
+              min="0"
               max={MAX_GAP}
             />
           </div>
@@ -126,6 +127,7 @@ const GridPlayground = () => {
             <Slider
               value={columnGap}
               onChange={(e) => setColumnGap(e.target.value)}
+              min="0"
               max={MAX_GAP}
             />
           </div>
@@ -156,6 +158,7 @@ const GridPlayground = () => {
                 <Slider
                   value={item.width}
                   onChange={(e) => handleWidthChange(index, e.target.value)}
+                  min={MIN_ITEM_DEFAULT_WIDTH}
                   max={MAX_ITEM_DEFAULT_WIDTH}
                 />
               </div>
@@ -164,6 +167,7 @@ const GridPlayground = () => {
                 <Slider
                   value={item.height}
                   onChange={(e) => handleHeightChange(index, e.target.value)}
+                  min={MIN_ITEM_DEFAULT_HEIGHT}
                   max={MAX_ITEM_DEFAULT_HEIGHT}
                 />
               </div>
