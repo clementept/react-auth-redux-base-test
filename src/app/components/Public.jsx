@@ -8,7 +8,7 @@ const Public = () => {
       </header>
       <main>
         <p>
-          This page is just a welcome page.
+          Login for more options
         </p>
         <p>&nbsp;</p>
       </main>

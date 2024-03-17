@@ -14,6 +14,9 @@ const Welcome = () => {
       <p>
         <Link to="/userslist">Go to the Users List</Link>
       </p>
+      <p>
+        <Link to="/flexdemo">Flex Demo</Link>
+      </p>
     </section>
   );
 
