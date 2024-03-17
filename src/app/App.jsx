@@ -7,7 +7,7 @@ import RequireAuth from "../features/auth/RequireAuth";
 import UsersList from "../features/users/UsersList";
 import PersistLogin from "../features/auth/PersistLogin";
 import Login2 from "../features/auth/Login2";
-import FlexDemo from "../features/flexDemo/FlexPlayground";
+import FlexPlayground from "../features/flexPlayground/FlexPlayground";
 
 const App = () => {
   return (
@@ -22,7 +22,7 @@ const App = () => {
         {/* protected routes */}
         <Route element={<PersistLogin />}>
           <Route element={<RequireAuth />}>
-            <Route path="flexdemo" element={<FlexDemo />} />
+            <Route path="flexplayground" element={<FlexPlayground />} />
             <Route path="welcome" element={<Welcome />} />
             <Route path="userslist" element={<UsersList />} />
           </Route>

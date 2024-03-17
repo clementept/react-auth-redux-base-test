@@ -24,7 +24,7 @@ const Button = ({ onClick, active, children }) => (
   </button>
 );
 
-const FlexDemo = () => {
+const FlexPlayground = () => {
   const [flexDirection, setFlexDirection] = useState("row");
   const [justifyContent, setJustifyContent] = useState("flex-start");
   const [alignItems, setAlignItems] = useState("stretch");
@@ -381,4 +381,4 @@ const FlexDemo = () => {
   );
 };
 
-export default FlexDemo;
+export default FlexPlayground;
