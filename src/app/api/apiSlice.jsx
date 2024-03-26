@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { setCredentials, logOut } from "../../features/auth/authSlice";
 
-const BASE_URL = "http://localhost:8000/api"
+const BASE_URL = "https://api.clemdev.site/api"
 
 const baseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
