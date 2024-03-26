@@ -1,4 +1,5 @@
 import { LoadingSpinner } from "../../app/components/LoadingSpinner";
+import ForbiddenPage from "../errors/ForbiddenPage";
 import { useGetUsersQuery } from "./usersApiSlice";
 import { Link } from "react-router-dom";
 
@@ -27,7 +28,12 @@ const UsersList = () => {
       </section>
     );
   } else if (isError) {
-    content = <p>{JSON.stringify(error)}</p>;
+    if(error.status === 403){
+      content = <ForbiddenPage/>
+    } else {
+      content = <p>{JSON.stringify(error)}</p>;
+    }
+    
   }
 
   return content;
